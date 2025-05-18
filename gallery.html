@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="YESU FOUNDATION Gallery - See our work in action">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>YESU FOUNDATION - Gallery</title>
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .gallery-item img {
+      transition: transform 0.3s ease;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 0.5rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    .gallery-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    
+    .filter-btn {
+      background: var(--light-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="main-header">
+    <div class="container">
+      <nav id="navbar">
+        <h1 class="logo"><a href="index.html">YESU FOUNDATION</a></h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="success.html">Success stories</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="bg-dark py-3">
+    <div class="container text-center">
+      <h1>Our Gallery</h1>
+      <p>See the impact of our work through images</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-3">
+    <div class="container">
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="education">Education</button>
+        <button class="filter-btn" data-filter="health">Health</button>
+        <button class="filter-btn" data-filter="farming">Farming</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+      </div>
+      
+      <div class="gallery">
+        <!-- Education Images -->
+        <div class="gallery-item" data-category="education">
+          <img src="images/education.jpg" alt="Children in classroom">
+          <div class="gallery-caption">
+            <h3>Education Program</h3>
+            <p>Children learning in our supported school</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="education">
+          <img src="images/education.jpg" alt="Graduation ceremony">
+          <div class="gallery-caption">
+            <h3>Graduation Day</h3>
+            <p>Celebrating our students' achievements</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="education">
+          <img src="images/education.jpg" alt="Library resources">
+          <div class="gallery-caption">
+            <h3>Library Resources</h3>
+            <p>New books for our community library</p>
+          </div>
+        </div>
+        
+        <!-- Health Images -->
+        <div class="gallery-item" data-category="health">
+          <img src="images/health.jpg" alt="Health checkup">
+          <div class="gallery-caption">
+            <h3>Health Checkups</h3>
+            <p>Regular medical examinations for our children</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="health">
+          <img src="images/health.jpg" alt="Health education">
+          <div class="gallery-caption">
+            <h3>Health Education</h3>
+            <p>Teaching children about good health practices</p>
+          </div>
+        </div>
+        
+        <!-- Farming Images -->
+        <div class="gallery-item" data-category="farming">
+          <img src="images/farming.jpg" alt="Community garden">
+          <div class="gallery-caption">
+            <h3>Community Garden</h3>
+            <p>Growing vegetables for nutrition and income</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="farming">
+          <img src="images/farming.jpg" alt="Farming training">
+          <div class="gallery-caption">
+            <h3>Farming Training</h3>
+            <p>Teaching sustainable farming methods</p>
+          </div>
+        </div>
+        
+        <!-- Events Images -->
+        <div class="gallery-item" data-category="events">
+          <img src="images/children.jpg" alt="Community gathering">
+          <div class="gallery-caption">
+            <h3>Community Gathering</h3>
+            <p>Celebrating together as a community</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/children.jpg" alt="Sports day">
+          <div class="gallery-caption">
+            <h3>Sports Day</h3>
+            <p>Children enjoying sports activities</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/children.jpg" alt="Christmas celebration">
+          <div class="gallery-caption">
+            <h3>Christmas Celebration</h3>
+            <p>Annual Christmas party for our children</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/children.jpg" alt="Volunteer visit">
+          <div class="gallery-caption">
+            <h3>Volunteer Visit</h3>
+            <p>International volunteers working with our children</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-primary py-3">
+    <div class="container text-center">
+      <h2>Be Part of Our Story</h2>
+      <p class="my-1">Help us create more moments like these by supporting our mission.</p>
+      <a href="get-involved.html" class="btn btn-dark my-1">Get Involved</a>
+      <a href="contact.html" class="btn btn-light my-1">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="py-2">
+    <div class="container">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>YESU FOUNDATION &copy; 2023 | Luwero Diocese, Uganda</p>
+      <p>Preparing children and youths to become self-reliant adults living in harmony</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Gallery Filtering -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+      // Add click event to filter buttons
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterBtns.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          // Get filter value
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Filter gallery items
+          galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
